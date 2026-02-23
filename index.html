@@ -3,72 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kannvi | Portfolio</title>
+<title>Kannvi Portfolio</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f5f7fa;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
 }
 
+/* Background */
+body{
+background:white;
+color:black;
+}
+
+/* Mickey background */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://upload.wikimedia.org/wikipedia/commons/6/64/Mickey_Mouse_head_and_ears.png");
+background-size:150px;
+background-repeat:repeat;
+opacity:0.05;
+z-index:-1;
+animation:moveBackground 40s linear infinite;
+}
+
+@keyframes moveBackground{
+from{background-position:0 0;}
+to{background-position:500px 500px;}
+}
+
+/* Navbar */
 nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
+position:fixed;
+top:0;
+width:100%;
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav a{
-    color:white;
-    margin:15px;
-    text-decoration:none;
-    font-weight:bold;
+margin:15px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+transition:0.3s;
 }
 
+nav a:hover{
+color:#555;
+}
+
+/* Hero section */
 header{
-    text-align:center;
-    padding:60px;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+animation:fadeIn 2s ease;
 }
 
-header img{
-    width:150px;
-    border-radius:50%;
+header h1{
+font-size:60px;
 }
 
+.typing{
+font-size:24px;
+margin-top:10px;
+}
+
+/* Sections */
 section{
-    padding:50px;
-    max-width:1000px;
-    margin:auto;
+padding:80px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
 
-.skills li{
-    display:inline-block;
-    background:#eee;
-    padding:10px 15px;
-    margin:5px;
-    border-radius:20px;
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
+/* Skills */
+.skills span{
+display:inline-block;
+padding:10px 15px;
+margin:8px;
+border:1px solid black;
+border-radius:20px;
+transition:0.3s;
+}
+
+.skills span:hover{
+transform:scale(1.1);
+background:black;
+color:white;
+}
+
+/* Projects */
 .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.project-card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.card{
+border:1px solid black;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+background:white;
 }
 
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* Footer */
 footer{
-    text-align:center;
-    padding:20px;
-    background:#222;
-    color:white;
+text-align:center;
+padding:20px;
+border-top:1px solid black;
+}
+
+/* Animations */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 </style>
 </head>
@@ -83,61 +157,97 @@ footer{
 </nav>
 
 <header>
-<img src="https://via.placeholder.com/150" alt="Profile Photo">
 <h1>Kannvi</h1>
-<p>AIML Student | Future AI Engineer</p>
+<p class="typing"></p>
 </header>
 
 <section id="about">
 <h2>About Me</h2>
 <p>
-I am a 2nd year CSE AIML student passionate about Artificial Intelligence,
-Machine Learning, and solving DSA problems.
+I am a 2nd year AIML student passionate about AI, Machine Learning, and DSA.
 </p>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
-<ul class="skills">
-<li>C++</li>
-<li>Python</li>
-<li>Machine Learning</li>
-<li>DSA</li>
-<li>HTML</li>
-</ul>
+<div class="skills">
+<span>C++</span>
+<span>Python</span>
+<span>Machine Learning</span>
+<span>DSA</span>
+<span>HTML</span>
+</div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="projects">
-
-<div class="project-card">
+<div class="card">
 <h3>AI Chatbot</h3>
 <p>Built using Python and NLP.</p>
 </div>
 
-<div class="project-card">
-<h3>Student Registration Form</h3>
-<p>Created using HTML5 validation.</p>
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Animated personal website.</p>
 </div>
 
-<div class="project-card">
-<h3>DSA Practice Tracker</h3>
-<p>Track coding problems solved daily.</p>
+<div class="card">
+<h3>DSA Tracker</h3>
+<p>Track coding progress.</p>
 </div>
-
 </div>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-<p>Email: KANNVI RANI@email.com</p>
-<p>GitHub: github.com/yourname</p>
+<p>Email: your@email.com</p>
 </section>
 
 <footer>
 <p>© 2026 Kannvi Portfolio</p>
 </footer>
+
+<script>
+// Typing animation
+const words = ["AIML Student", "Future AI Engineer", "DSA Learner"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+current = words[i];
+document.querySelector(".typing").textContent =
+current.substring(0,j);
+
+if(!isDeleting){
+j++;
+if(j>current.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+}else{
+j--;
+if(j===0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+}
+
+setTimeout(type,isDeleting?50:100);
+}
+type();
+
+// Scroll reveal
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const pos=sec.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+</script>
 
 </body>
 </html>
