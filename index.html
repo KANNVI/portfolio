@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kannvi | Portfolio</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f7fa;
+}
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+header{
+    text-align:center;
+    padding:60px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+}
+
+header img{
+    width:150px;
+    border-radius:50%;
+}
+
+section{
+    padding:50px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.skills li{
+    display:inline-block;
+    background:#eee;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:20px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<header>
+<img src="https://via.placeholder.com/150" alt="Profile Photo">
+<h1>Kannvi</h1>
+<p>AIML Student | Future AI Engineer</p>
+</header>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a 2nd year CSE AIML student passionate about Artificial Intelligence,
+Machine Learning, and solving DSA problems.
+</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<ul class="skills">
+<li>C++</li>
+<li>Python</li>
+<li>Machine Learning</li>
+<li>DSA</li>
+<li>HTML</li>
+</ul>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="project-card">
+<h3>AI Chatbot</h3>
+<p>Built using Python and NLP.</p>
+</div>
+
+<div class="project-card">
+<h3>Student Registration Form</h3>
+<p>Created using HTML5 validation.</p>
+</div>
+
+<div class="project-card">
+<h3>DSA Practice Tracker</h3>
+<p>Track coding problems solved daily.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: KANNVI RANI@email.com</p>
+<p>GitHub: github.com/yourname</p>
+</section>
+
+<footer>
+<p>© 2026 Kannvi Portfolio</p>
+</footer>
+
+</body>
+</html>
